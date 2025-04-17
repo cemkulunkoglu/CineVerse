@@ -1,0 +1,103 @@
+.weekly-pick-section {
+    padding: 3rem 0;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.05), rgba(255, 111, 0, 0.05));
+    border-radius: 20px;
+}
+
+.weekly-pick-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.weekly-pick-poster {
+    flex: 0 0 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-pick-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.weekly-pick-poster:hover img {
+    transform: scale(1.05);
+}
+
+.weekly-pick-info {
+    flex: 1;
+}
+
+.weekly-pick-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.movie-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.movie-meta .rating {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.movie-meta .rating i {
+    margin-right: 0.5rem;
+}
+
+.weekly-pick-info .overview {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+.watch-now-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.2);
+}
+
+.watch-now-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .weekly-pick-container {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .weekly-pick-poster {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .weekly-pick-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .movie-meta {
+        gap: 1rem;
+    }
+} 

@@ -1,0 +1,368 @@
+.home-container {
+  padding: 2rem;
+  max-width: 98%;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(45deg, rgba(26, 35, 126, 0.1), rgba(255, 111, 0, 0.1));
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(26, 35, 126, 0.9) 0%,
+    rgba(26, 35, 126, 0.7) 25%,
+    rgba(255, 111, 0, 0.7) 75%,
+    rgba(255, 111, 0, 0.9) 100%
+  );
+  opacity: 0.15;
+  z-index: -1;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 20%,
+    var(--secondary-color) 30%,
+    #ff9800 70%,
+    var(--primary-color) 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite;
+  text-shadow: 0 0 20px rgba(26, 35, 126, 0.3);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.categories-section {
+  margin-bottom: 2rem;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab:hover {
+  color: var(--primary-color);
+}
+
+.tab:hover::after {
+  width: 100%;
+}
+
+.tab.active {
+  color: var(--primary-color);
+}
+
+.tab.active::after {
+  width: 100%;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(26, 35, 126, 0.1);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  color: #ff4444;
+}
+
+.error-container h2 {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.genre-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: var(--secondary-color);
+}
+
+.genre-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.genre-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.genre-button:hover {
+  background: rgba(26, 35, 126, 0.1);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.genre-button.active {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+}
+
+.weekly-pick-section {
+  padding: 3rem 0;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, rgba(26, 35, 126, 0.05), rgba(255, 111, 0, 0.05));
+  border-radius: 20px;
+}
+
+.weekly-pick-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+.weekly-pick-poster {
+  flex: 0 0 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-pick-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.weekly-pick-poster:hover img {
+  transform: scale(1.05);
+}
+
+.weekly-pick-info {
+  flex: 1;
+}
+
+.weekly-pick-info h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.movie-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.movie-meta .rating {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.movie-meta .rating i {
+  margin-right: 0.5rem;
+}
+
+.weekly-pick-info .overview {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.watch-now-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 111, 0, 0.2);
+}
+
+.watch-now-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  .category-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .genre-title {
+    font-size: 1.2rem;
+  }
+
+  .genre-filters {
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .genre-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .weekly-pick-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .weekly-pick-poster {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .weekly-pick-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .movie-meta {
+    gap: 1rem;
+  }
+} 

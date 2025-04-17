@@ -1,0 +1,85 @@
+.genres-section {
+    padding: 4rem 0;
+    margin-top: 2rem;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.genres-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.genre-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+}
+
+.genre-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+    justify-content: center;
+}
+
+.genre-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.genre-button:hover {
+    background: rgba(26, 35, 126, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.genre-button.active {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .genre-title {
+        font-size: 1.2rem;
+    }
+
+    .genre-filters {
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .genre-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .dropdown-toggle {
+        min-width: 180px;
+        font-size: 0.9rem;
+    }
+} 
